@@ -21,9 +21,9 @@ class Database {
 
     const mongooseConnectionInstance = await mongoose.connect(env.DATABASE_URL);
     console.log(
-      "Database connected success!",
+      "Database connection success!",
       mongooseConnectionInstance.connection.host,
-      mongoose.connection.name,
+      mongooseConnectionInstance.connection.name,
     );
   }
 }
