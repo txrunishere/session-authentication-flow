@@ -13,15 +13,15 @@ export const globalErrorHandler = (
 ) => {
   const error = { ...err };
 
-  error.message = error.message;
-  error.status = error.status || "error";
-  error.statusCode = error.statusCode || 500;
+  error.message = err.message;
+  error.status = err.status || "error";
+  error.statusCode = err.statusCode || 500;
 
   if (env.NODE_ENV === "development") {
     return res.status(error.statusCode).json({
       status: error.status,
       message: error.message,
-      stack: error.stack,
+      stack: err.stack,
       error,
     });
   }
